@@ -18,6 +18,7 @@ def main() -> int:
         roundtrip = f.read()
     assert roundtrip == data, "round-trip mismatch"
     assert 1 <= len(ENTRY) <= 159, "entry length out of range"
+    assert "\n" not in ENTRY, "entry must be a single line"
     assert ENTRY.strip() == ENTRY, "entry has leading/trailing whitespace"
     return 0
 
